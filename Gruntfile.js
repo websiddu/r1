@@ -21,6 +21,21 @@ module.exports = function (grunt) {
 
   grunt.initConfig({
     yeoman: yeomanConfig,
+    buildcontrol: {
+      options: {
+        dir: 'dist',
+        commit: true,
+        push: true,
+        message: 'Built from %sourceCommit% on branch %sourceBranch%'
+      },
+      pages: {
+        options: {
+          remote: 'git@github.com:websiddu/r1.git',
+          branch: 'gh-pages'
+        }
+      }
+    },
+
     watch: {
       coffee: {
         files: ['<%= yeoman.app %>/scripts/{,*/}*.coffee'],
@@ -45,6 +60,7 @@ module.exports = function (grunt) {
         ]
       }
     },
+
     connect: {
       options: {
         port: 9000,
@@ -276,6 +292,11 @@ module.exports = function (grunt) {
     grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
     grunt.task.run(['serve']);
   });
+
+  grunt.registerTask('deploy', 'Deploy to Github Pages', ['build', 'buildcontrol']);
+
+  grunt.registerTask('dist', 'Save presentation files to *dist* directory.', ['test', 'sass', 'buildIndex', 'copy']);
+
 
   grunt.registerTask('test', [
     'clean:server',
