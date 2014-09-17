@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
+    <title>HADI REDA's Resume</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -16,20 +16,19 @@
     <script src="bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
   </head>
-  <body>
-  <section class="container">
+  <body ng-app="resumeApp">
+  <section class="container" ng-controller="resumeController">
     <header>
       <div class="row">
         <div class="col-md-4 user-img">
-          <img src="images/user.png" alt="HADI REDA" class="">
+          <img ng-src="{{data.basics.imgurl}}" alt="HADI REDA" class="">
         </div>
         <div class="col-md-8 header-cont">
-          <h1>HADI REDA</h1>
-          <h3>hello@hadireda.com</h3>
-          <h3>www.hadireda.com</h3>
-          <h3>+43123456789</h3>
-          <blockquote>"Passion is not what you’re good at. <br>
-           It’s what you enjoy the most.</blockquote>
+          <h1>{{data.basics.name}}</h1>
+          <h3>{{data.basics.email}}</h3>
+          <h3>{{data.basics.website}}</h3>
+          <h3>{{data.basics.mobile}}</h3>
+          <blockquote>{{data.basics.quote}}</blockquote>
         </div>
       </div>
     </header>
@@ -40,10 +39,7 @@
          <div class="col-md-1"></div>
          <div class="col-md-11">
          <ul class="info-list">
-           <li> <span>1996 - 2000</span> Middletown School, 23 Westend</li>
-           <li> <span>2000 - 2004</span> Chersey School, 35/2 Parkdrive</li>
-           <li> <span>2004 - 2010</span> University State, 12 Escape Town</li>
-           <li> <span>2010 - today</span> Graphic School Boston, 65 Barrymore</li>
+            <li ng-repeat="item in data.educaiton"><span>{{item.year}}</span> {{item.school}}</li>
          </ul>
          </div>
          </div>
@@ -54,9 +50,7 @@
          <div class="col-md-1"></div>
          <div class="col-md-11">
            <ul class="info-list">
-             <li> <span>2009 - 2010</span> Microsoft Web Developer</li>
-             <li> <span>2011 - 2012</span> Google Adwords Manager</li>
-             <li> <span>2012 - today</span> Facebook Marketing Director</li>
+              <li ng-repeat="item in data.work"><span>{{item.year}}</span> {{item.company}}</li>
            </ul>
          </div>
          </div>
@@ -64,52 +58,11 @@
       <section class="skills info-block">
         <h4>Skills</h4>
         <div class="row">
-          <div class="col-md-1 hidden-xs"></div>
-          <div class="col-md-2 col-xs-4 skill-block">
-            <em class="devicon-photoshop-plain"></em>
-            <span>Adobe PhotoShop</span>
-
-          </div>
-          <div class="col-md-2 col-xs-4 skill-block">
-            <em class="devicon-illustrator-plain"></em>
-            <span>Adobe Illustrator</span>
-          </div>
-          <div class="col-md-2 col-xs-4 skill-block">
-            <em class="devicon-jquery-plain"></em>
-            <span>jQuery</span>
-          </div>
-          <div class="col-md-2 col-xs-4 skill-block">
-            <em class="devicon-angularjs-plain"></em>
-            <span>Angular.js</span>
-          </div>
-          <div class="col-md-2 col-xs-4 skill-block">
-            <em class="devicon-javascript-plain"></em>
-            <span>JavaScript</span>
+          <div class="col-md-2 col-xs-4 skill-block" ng-repeat="item in data.skills">
+            <em class="{{item.icon}}"></em>
+            <span>{{item.name}}</span>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-1 hidden-xs"></div>
-          <div class="col-md-2 col-xs-4 skill-block">
-            <em class="devicon-html5-plain"></em>
-            <span>HTML5</span></div>
-          <div class="col-md-2 col-xs-4 skill-block">
-            <em class="devicon-css3-plain"></em>
-            <span>CSS3</span>
-          </div>
-          <div class="col-md-2 col-xs-4 skill-block">
-            <em class="devicon-php-plain"></em>
-            <span>PHP</span>
-          </div>
-          <div class="col-md-2 col-xs-4 skill-block">
-            <em class="devicon-python-plain"></em>
-            <span>Python</span>
-          </div>
-          <div class="col-md-2 col-xs-4 skill-block">
-            <em class="devicon-java-line"></em>
-            <span>Java</span>
-          </div>
-        </div>
-
       </section>
 
 
@@ -119,38 +72,17 @@
           <div class="col-md-1"></div>
           <div class="col-md-6">
             <ul class="asset-list">
-              <li>
+              <li ng-repeat="item in data.personalskills">
                 <div class="bar">
-                  <div class="bar-value" style="width: 70%"></div>
+                  <div class="bar-value" ng-style="{width: item.value+'%'}"></div>
                 </div>
-                <span class="visible-xs">Creativity</span>
-              </li>
-              <li>
-                <div class="bar">
-                  <div class="bar-value" style="width: 90%"></div>
-                 </div>
-                 <span class="visible-xs">Social Skills</span>
-              </li>
-              <li>
-                <div class="bar">
-                  <div class="bar-value" style="width: 50%"></div>
-                </div>
-                <span class="visible-xs">Leadership</span>
-              </li>
-              <li>
-                <div class="bar">
-                  <div class="bar-value" style="width: 100%"></div>
-                </div>
-                <span class="visible-xs">Passion</span>
+                <span class="visible-xs">{{item.name}}</span>
               </li>
             </ul>
           </div>
           <div class="col-md-5 hidden-xs">
-            <ul class="asset-list asset-list-cont">
-              <li>Creativity</li>
-              <li>Social Skills</li>
-              <li>Leadership</li>
-              <li>Passion</li>
+            <ul class="asset-list asset-list-cont" >
+              <li ng-repeat="item in data.personalskills">{{item.name}}</li>
             </ul>
           </div>
         </div>
@@ -159,35 +91,10 @@
       <section class="social info-block">
         <h4>Social Profiles</h4>
         <div class="row">
-          <div class="col-md-1 hidden-xs"></div>
-          <div class="col-md-2 col-xs-4 col-sm-3 social-block">
-            <a href="#">
-              <em class="socicon socicon-twitter"></em>
-              <span>/twitter</span>
-            </a>
-          </div>
-          <div class="col-md-2 col-xs-4 col-sm-3 social-block">
-            <a href="#">
-              <em class="socicon socicon-facebook"></em>
-              <span>/facebook</span>
-            </a>
-          </div>
-          <div class="col-md-2 col-xs-4 col-sm-3 social-block">
-            <a href="#">
-              <em class="socicon socicon-dribbble"></em>
-              <span>/dribbble</span>
-            </a>
-          </div>
-          <div class="col-md-2 col-xs-4 col-sm-3  social-block">
-            <a href="#">
-              <em class="socicon socicon-pinterest"></em>
-              <span>/pinterest</span>
-            </a>
-          </div>
-          <div class="col-md-2 col-xs-4 col-sm-3  social-block">
-              <a href="#">
-              <em class="socicon socicon-instagram"></em>
-              <span>/instagram</span>
+          <div class="col-md-2 col-xs-4 col-sm-3 social-block" ng-repeat="item in data.socialprofiles">
+            <a ng-href="{{item.url}}">
+              <em class="socicon {{item.icon}}"></em>
+              <span>{{item.name}}</span>
             </a>
           </div>
           </div>
@@ -216,8 +123,8 @@
 
         <!-- build:js scripts/main.js -->
         <script src="bower_components/jquery/jquery.js"></script>
+        <script src="bower_components/angular/angular.min.js"></script>
         <script src="scripts/main.js"></script>
-        <script src="scripts/hello.js"></script>
         <!-- endbuild -->
 </body>
 </html>

@@ -1,0 +1,142 @@
+{
+  "head": {
+    "title": "HADI REDA's Resume"
+  },
+  "basics": {
+    "name": "HADI REDA",
+    "email": "hello@hadireda.com",
+    "website": "www.hadireda.com",
+    "mobile": "+43123456789",
+    "imgurl": "images/user.png",
+    "quote": "Passion is not what you’re good at. It’s what you enjoy the most."
+  },
+  "educaiton": [
+    {
+      "year": "1996 - 2000",
+      "school": "Middletown School, 23 Westend"
+    },
+    {
+      "year": "2000 - 2004",
+      "school": "Chersey School, 35/2 Parkdrive"
+    },
+    {
+      "year": "2004 - 2010",
+      "school": "University State, 12 Escape Town"
+    },
+    {
+      "year": "2010 - today",
+      "school": "Graphic School Boston, 65 Barrymore"
+    }
+  ],
+  "work": [
+    {
+      "year": "2009 - 2010",
+      "company": "Microsoft Web Developer"
+    },
+    {
+      "year": "2011 - 2012",
+      "company": "Google Adwords Manager"
+    },
+    {
+      "year": "2012 - today",
+      "company": " Facebook Marketing Director"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Adobe PhotoShop",
+      "icon": "devicon-photoshop-plain",
+      "scale": "4"
+    },
+    {
+      "name": "Adobe Illustrator",
+      "icon": "devicon-illustrator-plain",
+      "scale": "4"
+    },
+    {
+      "name": "jQuery",
+      "icon": "devicon-jquery-plain",
+      "scale": "4"
+    },
+    {
+      "name": "Angular.js",
+      "icon": "devicon-angularjs-plain",
+      "scale": "4"
+    },
+    {
+      "name": "JavaScript",
+      "icon": "devicon-javascript-plain",
+      "scale": "4"
+    },
+    {
+      "name": "HTML5",
+      "icon": "devicon-html5-plain",
+      "scale": "4"
+    },
+    {
+      "name": "CSS3",
+      "icon": "devicon-css3-plain",
+      "scale": "4"
+    },
+    {
+      "name": "Python",
+      "icon": "devicon-python-plain",
+      "scale": "4"
+    },
+    {
+      "name": "Java",
+      "icon": "devicon-java-line",
+      "scale": "2"
+    }
+  ],
+  "personalskills": [
+    {
+      "name": "Creativity",
+      "value": "80"
+    },
+    {
+      "name": "Social Skills",
+      "value": "90"
+    },
+    {
+      "name": "Leadership",
+      "value": "50"
+    },
+    {
+      "name": "Passion",
+      "value": "100"
+    }
+  ],
+  "socialprofiles": [
+    {
+      "name": "/twitter",
+      "url": "#",
+      "icon": "socicon-twitter"
+    },
+    {
+      "name": "/facebook",
+      "url": "#",
+      "icon": "socicon-facebook"
+    },
+    {
+      "name": "/dribbble",
+      "url": "#",
+      "icon": "socicon-dribbble"
+    },
+    {
+      "name": "/pinterest",
+      "url": "#",
+      "icon": "socicon-pinterest"
+    },
+    {
+      "name": "/instagram",
+      "url": "#",
+      "icon": "socicon-instagram"
+    },
+    {
+      "name": "/behance",
+      "url": "#",
+      "icon": "socicon-behance"
+    }
+  ]
+}
