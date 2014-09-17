@@ -1,4 +1,12 @@
-r1
-==
+### Resume - R1
+===============
 
-One page resume starter 
+##### Source
+
+- http://onsume.com/gallery-view/free-cv-template/
+
+##### Peview
+![Image](http://onsume.com/wp-content/uploads/2014/03/free_cv_template.jpg)
+
+##### License
+Released under the MIT license.
